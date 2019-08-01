@@ -31,20 +31,23 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // only gets triggered when the screen loads up
+        updateDiceImages()
+        
     }
     
     //Touch inside: user pressed inside the button and let go
     //IBAction: notifies code when button is interacted with
     @IBAction func RollButtonPressed(_ sender: UIButton) {
+        updateDiceImages()
+    }
+    
+    func updateDiceImages() {
         //creates new whole numbers between 0 and 5 for RandomDiceIndex1
         RandomDiceIndex1 = Int.random(in: 0 ... 5)
         
         //creates new whole numbers between 0 and 5 for RandomDiceIndex2
         RandomDiceIndex2 = Int.random(in: 0 ... 5)
-        
-        //testing the random number generator
-        print(RandomDiceIndex1)
         
         //randomly choose a member of diceArray with RandomDiceIndex
         DiceImageView1.image = UIImage(named: diceArray[RandomDiceIndex1])
