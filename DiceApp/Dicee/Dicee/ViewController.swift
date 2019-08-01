@@ -36,6 +36,11 @@ class ViewController: UIViewController {
         
     }
     
+    //detect when motion event has started and then ends
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        updateDiceImages()
+    }
+    
     //Touch inside: user pressed inside the button and let go
     //IBAction: notifies code when button is interacted with
     @IBAction func RollButtonPressed(_ sender: UIButton) {
