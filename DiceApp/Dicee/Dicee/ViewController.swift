@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //constatn array that starts counting at 0
+    let diceArray = ["dice1", "dice2", "dice3", "dice4", "dice5", "dice6"]
+    
     //var NameOfVariable: type of variable = value
     var RandomDiceIndex1: Int = 0
     var RandomDiceIndex2: Int = 0
@@ -42,6 +45,10 @@ class ViewController: UIViewController {
         
         //testing the random number generator
         print(RandomDiceIndex1)
+        
+        //randomly choose a member of diceArray with RandomDiceIndex
+        DiceImageView1.image = UIImage(named: diceArray[RandomDiceIndex1])
+        DiceImageView2.image = UIImage(named: diceArray[RandomDiceIndex2])
     }
     
 }
